@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Brgy. GreenHub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-role="resident" class="is-auth">
+
+<!-- ================= APP SHELL ================= -->
+<aside class="sidebar">
+  <div class="brand">
+    <span class="brand-pin">📍</span>
+    <div class="brand-text">
+      <small class="role-label"></small>
+      <strong>Brgy. GreenHub</strong>
+    </div>
+  </div>
+
+  <nav class="nav">
+    <!-- Resident -->
+    <a href="#" data-view="r-home" data-for="resident"><i>🏠</i><span>Home</span></a>
+    <a href="#" data-view="r-catalog" data-for="resident"><i>🔁</i><span>Redirect</span></a>
+    <a href="#" data-view="r-map" data-for="resident"><i>🗺️</i><span>Brgy Map</span></a>
+    <a href="#" data-view="r-profile" data-for="resident"><i>👤</i><span>Profile</span></a>
+    <!-- Admin -->
+    <a href="#" data-view="a-home" data-for="admin"><i>🏠</i><span>Home</span></a>
+    <a href="#" data-view="a-users" data-for="admin"><i>👥</i><span>Users</span></a>
+    <a href="#" data-view="a-redirects" data-for="admin"><i>🔁</i><span>Redirects</span></a>
+    <a href="#" data-view="a-settings" data-for="admin"><i>⚙️</i><span>Settings</span></a>
+  </nav>
+
+  <a href="#" class="signout" data-view="auth-login"><i>⏻</i><span>Sign out</span></a>
+</aside>
+
+<header class="topbar">
+  <div>
+    <small class="role-label"></small>
+    <h1 id="page-title">Brgy. GreenHub</h1>
+  </div>
+  <div class="avatar-ring" id="top-avatar">MB</div>
+</header>
+
+<main class="content">
+
+  <!-- ============ AUTH: LOGIN ============ -->
+  <section class="view auth-view active" id="auth-login">
+    <div class="auth-hero">
+      <span class="brand-pin big">📍</span>
+      <h2>Brgy. GreenHub</h2>
+      <p>Sign in to your barangay green ecosystem. Match your home's needs to the right supplies.</p>
+    </div>
+    <div class="auth-card">
+      <div class="role-switch">
+        <button class="role-btn on" data-role="resident" type="button">Resident</button>
+        <button class="role-btn" data-role="admin" type="button">Admin</button>
+      </div>
+      <h2>Welcome Back</h2>
+      <p class="muted">Sign in to your barangay green ecosystem</p>
+
+      <form id="login-form">
+        <label>Barangay Email or Username
+          <input type="text" id="login-user" placeholder="resident@greenhub.brgy" required>
+        </label>
+        <label>Password
+          <input type="password" value="••••••••••••" required>
+        </label>
+        <div class="row-between">
+          <label class="check"><input type="checkbox" checked> Remember device</label>
+          <a href="#" class="link">Forgot Password?</a>
+        </div>
+        <button class="btn btn-primary" type="submit">Sign In Securely</button>
+      </form>
+      <div class="divider"><span>NEW USER?</span></div>
+      <p class="center muted">Want to green your home? <a href="#" class="link" data-view="auth-register">Register</a></p>
+    </div>
+  </section>
+
+  <!-- ============ AUTH: REGISTER ============ -->
+  <section class="view auth-view" id="auth-register">
+    <div class="auth-hero">
+      <span class="brand-pin big">🌱</span>
+      <h2>Join the Greening Initiative</h2>
+      <p>Join our barangay initiative to make your home lively.</p>
+    </div>
+    <div class="auth-card">
+      <h2>Create Account 🌱</h2>
+      <p class="muted">Join our barangay initiative to make your home lively</p>
+      <form id="register-form">
+        <label>Full Name <input type="text" placeholder="Mark Niño Benolerao" required></label>
+        <label>Barangay Email or Username <input type="text" placeholder="resident@greenhub.brgy" required></label>
+        <label>Barangay Zone / Purok <input type="text" placeholder="Zone 3 / Purok Proper" required></label>
+        <label>Create Password <input type="password" value="••••••••••••" required></label>
+        <label class="check"><input type="checkbox" checked> I agree to the Barangay Greening Guidelines</label>
+        <button class="btn btn-primary" type="submit">Register Resident</button>
+        <button class="btn btn-ghost" type="button" id="register-admin">Register as Admin</button>
+      </form>
+      <div class="divider"><span>HAVE AN ID?</span></div>
+      <p class="center muted">Already registered? <a href="#" class="link" data-view="auth-login">Sign In Here</a></p>
+    </div>
+  </section>
+
+  <!-- ============ RESIDENT HOME ============ -->
+  <section class="view" id="r-home" data-title="Home">
+    <div class="alert alert-ok">✔ Account Created! Welcome, Mark Niño</div>
+
+    <div class="hero-card">
+      <div>
+        <h2>Make Your Home Lively 🌿</h2>
+        <p>Tell us what your house needs &amp; get redirected straight to the right supplies.</p>
+      </div>
+      <button class="btn btn-primary" data-view="r-catalog">Start Smart Redirect →</button>
+    </div>
+
+    <h3 class="section-title">Quick Supply Redirects</h3>
+    <div class="grid grid-4">
+      <a href="#" class="tile" data-view="r-catalog"><span class="ico ico-green">🌿</span><div><strong>Plants</strong><small>Indoor &amp; outdoor</small></div><em>→</em></a>
+      <a href="#" class="tile" data-view="r-catalog"><span class="ico ico-yellow">🌱</span><div><strong>Soil</strong><small>Loam &amp; compost</small></div><em>→</em></a>
+      <a href="#" class="tile" data-view="r-catalog"><span class="ico ico-orange">🪴</span><div><strong>Flowerpots</strong><small>Clay &amp; ceramic pots</small></div><em>→</em></a>
+      <a href="#" class="tile" data-view="r-catalog"><span class="ico ico-blue">⚒️</span><div><strong>Tools</strong><small>Trowels &amp; care</small></div><em>→</em></a>
+    </div>
+
+    <h3 class="section-title">Redirect by Home Area</h3>
+    <div class="grid grid-2">
+      <div class="card row-between">
+        <div><strong>Indoor Living Area</strong><small class="block muted">Low-light plants + ceramic pots + potting soil</small></div>
+        <button class="btn btn-primary btn-sm" data-view="r-catalog">Go →</button>
+      </div>
+      <div class="card row-between">
+        <div><strong>Front Yard &amp; Street-Facing</strong><small class="block muted">Sun plants + clay planters + trowel &amp; watering can</small></div>
+        <button class="btn btn-primary btn-sm" data-view="r-catalog">Go →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RESIDENT CATALOG ============ -->
+  <section class="view" id="r-catalog" data-title="Plants &amp; Greenery">
+    <small class="eyebrow">SUPPLY CATALOG</small>
+    <div class="toolbar">
+      <input class="search" type="search" placeholder="🔍 Search plants, soil, pots, or tools..." id="catalog-search">
+      <div class="chips" data-filter-group="catalog">
+        <button class="chip on" data-filter="all">All</button>
+        <button class="chip" data-filter="plants">Plants</button>
+        <button class="chip" data-filter="soil">Soil</button>
+        <button class="chip" data-filter="pots">Pots</button>
+      </div>
+    </div>
+    <div class="grid grid-2" id="catalog-list">
+      <article class="card item" data-cat="plants"><span class="ico ico-green lg">🌿</span><div><strong>Snake Plant (Sansevieria)</strong><small class="block muted">Indoor air purifier • Low maintenance</small><a href="#" class="link">Redirect Ready →</a></div></article>
+      <article class="card item" data-cat="soil"><span class="ico ico-yellow lg">🌱</span><div><strong>Organic Rich Loam Soil (5kg)</strong><small class="block muted">Nutrient-dense compost mixture</small><a href="#" class="link">Redirect Ready →</a></div></article>
+      <article class="card item" data-cat="pots"><span class="ico ico-orange lg">🪴</span><div><strong>Decorative Ceramic Flowerpot</strong><small class="block muted">Includes drainage tray • 8-inch</small><a href="#" class="link">Redirect Ready →</a></div></article>
+      <article class="card item" data-cat="tools"><span class="ico ico-blue lg">⚒️</span><div><strong>Gardening Hand Trowel &amp; Shears</strong><small class="block muted">Stainless steel rust-resistant tool set</small><a href="#" class="link">Redirect Ready →</a></div></article>
+    </div>
+  </section>
+
+  <!-- ============ RESIDENT MAP ============ -->
+  <section class="view" id="r-map" data-title="Barangay Greenery View">
+    <small class="eyebrow">COMMUNITY MAP</small>
+    <div class="map-box">
+      <span class="dot d1">🏠</span><span class="dot d2"></span><span class="dot d3">🌿</span>
+      <p>📍 Zone 3 Purok Proper (142 Houses Greened)</p>
+    </div>
+    <div class="card">
+      <strong>Barangay Greening Progress</strong>
+      <div class="bar"><span style="width:71%"></span></div>
+      <small class="muted">71% of houses now have indoor/outdoor plants</small>
+    </div>
+    <h3 class="section-title">Zone Status &amp; Impact</h3>
+    <div class="grid grid-2">
+      <div class="card row-between"><div class="row-gap"><span class="ico-plain">🌱</span><div><strong>Pook 1 - Main Street</strong><small class="block muted">45 houses transformed • Very Lively</small></div></div><span class="badge badge-ok">Active</span></div>
+      <div class="card row-between"><div class="row-gap"><span class="ico-plain">🪴</span><div><strong>Pook 2 - Chapel Area</strong><small class="block muted">52 houses transformed • Lively</small></div></div><span class="badge badge-ok">Active</span></div>
+    </div>
+  </section>
+
+  <!-- ============ RESIDENT PROFILE ============ -->
+  <section class="view" id="r-profile" data-title="My Profile">
+    <div class="profile-head">
+      <div class="avatar-lg">MB</div>
+      <h2>Mark Niño A. Benolerao</h2>
+      <p class="muted">resident@greenhub.brgy • Zone 3</p>
+    </div>
+    <div class="alert alert-ok"><strong>🏡 Home Greening Status: Active</strong><br><small>You have added 4 plant varieties &amp; 2 tools via redirect.</small></div>
+    <div class="grid grid-2">
+      <a href="#" class="card setting"><span class="ico-plain">📍</span><div><strong>Update Barangay Address / Zone</strong><small class="block muted">Purok Proper, Zone 3</small></div><em>→</em></a>
+      <a href="#" class="card setting"><span class="ico-plain">🔔</span><div><strong>Redirect &amp; Greening Notifications</strong><small class="block muted">Enabled for new community supplies</small></div><em>→</em></a>
+      <a href="#" class="card setting"><span class="ico-plain">🛡️</span><div><strong>Security &amp; Password</strong><small class="block muted">Last changed 2 weeks ago</small></div><em>→</em></a>
+    </div>
+    <button class="btn btn-danger" data-view="auth-login">Sign Out</button>
+  </section>
+
+  <!-- ============ ADMIN HOME ============ -->
+  <section class="view" id="a-home" data-title="Admin Dashboard">
+    <div class="alert alert-neutral">🎙️ Admin Mode Active • System Online</div>
+    <h3 class="section-title">Barangay Greenery Metrics</h3>
+    <div class="grid grid-2">
+      <div class="stat stat-green"><strong>142</strong><span>Houses Greened</span><small>Plain to lively</small></div>
+      <div class="stat stat-blue"><strong>480+</strong><span>Total Redirects</span><small>94% match rate</small></div>
+    </div>
+
+    <h3 class="section-title">Manage System Categories</h3>
+    <div class="grid grid-2">
+      <div class="card row-between"><div class="row-gap"><span class="ico-plain">🌿</span><div><strong>Plants (Indoor &amp; Outdoor)</strong><small class="block muted">240 items listed</small></div></div><div class="btn-pair"><button class="btn btn-soft-danger btn-sm">Delete</button><button class="btn btn-primary btn-sm">Edit</button></div></div>
+      <div class="card row-between"><div class="row-gap"><span class="ico-plain">🌱</span><div><strong>Soil &amp; Fertilizers</strong><small class="block muted">125 bags listed</small></div></div><div class="btn-pair"><button class="btn btn-soft-danger btn-sm">Delete</button><button class="btn btn-primary btn-sm">Edit</button></div></div>
+      <div class="card row-between"><div class="row-gap"><span class="ico-plain">🪴</span><div><strong>Flowerpots &amp; Planters</strong><small class="block muted">90 pots listed</small></div></div><div class="btn-pair"><button class="btn btn-soft-danger btn-sm">Delete</button><button class="btn btn-primary btn-sm">Edit</button></div></div>
+      <div class="card row-between"><div class="row-gap"><span class="ico-plain">⚒️</span><div><strong>Gardening Tools</strong><small class="block muted">65 tools listed</small></div></div><div class="btn-pair"><button class="btn btn-soft-danger btn-sm">Delete</button><button class="btn btn-primary btn-sm">Edit</button></div></div>
+    </div>
+
+    <h3 class="section-title">Quick Actions</h3>
+    <button class="btn btn-primary btn-wide" data-open="dlg-item">+ Add New Item to System</button>
+  </section>
+
+  <!-- ============ ADMIN USERS ============ -->
+  <section class="view" id="a-users" data-title="Barangay Residents">
+    <p class="muted">186 registered households across all zones</p>
+    <div class="toolbar">
+      <input class="search" type="search" placeholder="🔍 Search resident name or zone..." id="user-search">
+      <div class="chips" data-filter-group="users">
+        <button class="chip on" data-filter="all">All (186)</button>
+        <button class="chip chip-green" data-filter="active">Active (142)</button>
+        <button class="chip chip-yellow" data-filter="pending">Pending (44)</button>
+      </div>
+    </div>
+
+    <div class="grid grid-2" id="user-list">
+      <article class="card user" data-status="active"><span class="initials">MB</span><div><strong>Mark Niño Benolerao</strong><small class="block muted">Zone 3 • 4 Plants, 2 Tools</small><span class="badge badge-ok">Greened</span></div><button class="btn btn-primary btn-sm">View</button></article>
+      <article class="card user" data-status="active"><span class="initials">JS</span><div><strong>Juan Santos</strong><small class="block muted">Pook 3 • Front Yard Bundle</small><span class="badge badge-ok">Greened</span></div><button class="btn btn-primary btn-sm">View</button></article>
+      <article class="card user" data-status="active"><span class="initials">MC</span><div><strong>Maria Cruz</strong><small class="block muted">Pook 1 • Indoor Plant Kit</small><span class="badge badge-ok">Greened</span></div><button class="btn btn-primary btn-sm">View</button></article>
+      <article class="card user" data-status="pending"><span class="initials initials-warn">AR</span><div><strong>Ana Reyes</strong><small class="block muted">Zone 2 • Awaiting First Redirect</small><span class="badge badge-warn">Pending</span></div><button class="btn btn-mid btn-sm">Verify</button></article>
+    </div>
+    <button class="btn btn-mid btn-wide" data-open="dlg-resident">+ Register Resident Manually</button>
+  </section>
+
+  <!-- ============ ADMIN REDIRECTS ============ -->
+  <section class="view" id="a-redirects" data-title="Smart Redirect Logs">
+    <p class="muted">Track user need-to-supply redirection performance</p>
+    <div class="grid grid-2">
+      <div class="stat stat-green"><strong>480+</strong><span>Total Redirects</span><small>+38 this week</small></div>
+      <div class="stat stat-blue"><strong>94%</strong><span>Match Accuracy</span><small>Need-to-supply fit</small></div>
+    </div>
+
+    <div class="grid grid-2 align-start">
+      <div>
+        <h3 class="section-title">Redirect Demand Breakdown</h3>
+        <div class="card">
+          <p class="bar-label">🌿 Plants (45%) • 🌱 Soil (25%)</p>
+          <div class="bar split"><span style="width:45%;background:var(--green-700)"></span><span style="width:25%;background:var(--green-400)"></span></div>
+          <p class="bar-label">🪴 Flowerpots (18%) • ⚒️ Tools (12%)</p>
+          <div class="bar split"><span style="width:18%;background:#d97706"></span><span style="width:12%;background:#2563eb"></span></div>
+        </div>
+      </div>
+      <div>
+        <h3 class="section-title">Live Redirect Activity</h3>
+        <div class="stack">
+          <div class="card row-between"><div><strong>Juan Santos → Front Yard Bundle</strong><small class="block muted">Sun shrubs + clay pots + trowel • 10m ago</small></div><span class="badge badge-ok">Matched</span></div>
+          <div class="card row-between"><div><strong>Maria Cruz → Indoor Living Kit</strong><small class="block muted">Snake plant + ceramic pot + loam • 25m ago</small></div><span class="badge badge-ok">Matched</span></div>
+          <div class="card row-between"><div><strong>Pedro Lim → Soil &amp; Fertilizer Restock</strong><small class="block muted">Organic compost mix (5kg) • 1 hr ago</small></div><span class="badge badge-ok">Matched</span></div>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-primary btn-wide">⚙️ Configure Redirect Rules</button>
+  </section>
+
+  <!-- ============ ADMIN SETTINGS ============ -->
+  <section class="view" id="a-settings" data-title="Settings">
+    <div class="admin-card">
+      <div class="avatar-lg sm">NA</div>
+      <div><strong>Prof. Niño Abao</strong><small class="block">Barangay System Administrator</small></div>
+    </div>
+
+    <h3 class="section-title">System &amp; Redirect Controls</h3>
+    <div class="grid grid-2">
+      <div class="card row-between"><div><strong>Smart Redirect Engine</strong><small class="block muted">Auto-match user needs to supply links</small></div><label class="switch"><input type="checkbox" checked><span></span></label></div>
+      <div class="card row-between"><div><strong>Resident Auto-Verification</strong><small class="block muted">Verify barangay zone IDs automatically</small></div><label class="switch"><input type="checkbox" checked><span></span></label></div>
+    </div>
+
+    <h3 class="section-title">Portal Configuration</h3>
+    <div class="grid grid-3">
+      <a href="#" class="card setting"><span class="ico-plain">🔗</span><div><strong>External Supplier Redirect URLs</strong><small class="block muted">Plants, Soil, Pots &amp; Tools endpoints</small></div><em>→</em></a>
+      <a href="#" class="card setting"><span class="ico-plain">🏘️</span><div><strong>Barangay Zones &amp; Greenery Goals</strong><small class="block muted">Target: 200 houses greened</small></div><em>→</em></a>
+      <a href="#" class="card setting"><span class="ico-plain">📊</span><div><strong>Export Community Impact Report</strong><small class="block muted">Download monthly PDF / CSV summary</small></div><em>→</em></a>
+    </div>
+    <button class="btn btn-danger" data-view="auth-login">Exit Admin Portal</button>
+  </section>
+
+  <footer class="credit">Mark Niño A. Benolerao | Prof: Niño Abao</footer>
+</main>
+
+<!-- ================= DIALOGS ================= -->
+<dialog id="dlg-resident">
+  <form method="dialog" class="dlg-form">
+    <h2>Register Resident Manually</h2>
+    <p class="muted">Add a household directly to the barangay greenery system</p>
+    <label>Resident Full Name <input type="text" placeholder="e.g., Juan Santos"></label>
+    <label>Barangay Zone / Pook <input type="text" placeholder="e.g., Zone 3 / Pook Proper"></label>
+    <label>Barangay Email or Username <input type="text" placeholder="resident@greenhub.brgy"></label>
+    <fieldset>
+      <legend>Initial House Greening Status</legend>
+      <div class="chips" data-filter-group="status">
+        <button type="button" class="chip chip-green on">🌿 Greened</button>
+        <button type="button" class="chip">⏳ Pending</button>
+      </div>
+    </fieldset>
+    <label>Temporary Password <input type="password" value="••••••••••••"></label>
+    <div class="btn-pair full">
+      <button class="btn btn-soft" value="cancel">Cancel</button>
+      <button class="btn btn-primary" value="save">Save &amp; Register</button>
+    </div>
+  </form>
+</dialog>
+
+<dialog id="dlg-item">
+  <form method="dialog" class="dlg-form">
+    <h2>Add New System Item</h2>
+    <p class="muted">Register new planting supplies or tools for resident redirection</p>
+    <label>Item Name <input type="text" placeholder="e.g., Monstera Deliciosa / Organic Compost"></label>
+    <fieldset>
+      <legend>Select Category</legend>
+      <div class="chips" data-filter-group="cat">
+        <button type="button" class="chip chip-green on">🌿 Plants</button>
+        <button type="button" class="chip">🌱 Soil</button>
+        <button type="button" class="chip">🪴 Pots</button>
+        <button type="button" class="chip">⚒️ Tools</button>
+      </div>
+    </fieldset>
+    <label>Initial Stock Quantity <input type="number" value="50"></label>
+    <label>Description / Suitability <textarea rows="3" placeholder="Indoor air purifier, low light tolerance, fits living room space..."></textarea></label>
+    <label>Supplier Redirect Link / Endpoint <input type="url" placeholder="https://greenhub.brgy/supplier/item-id"></label>
+    <div class="btn-pair full">
+      <button class="btn btn-soft" value="cancel">Cancel</button>
+      <button class="btn btn-primary" value="save">Save &amp; Publish</button>
+    </div>
+  </form>
+</dialog>
+
+<script>
+  const body = document.body;
+  const titleEl = document.getElementById('page-title');
+
+  function setRole(r) {
+    body.dataset.role = r;
+    document.querySelectorAll('.role-btn').forEach(b => b.classList.toggle('on', b.dataset.role === r));
+    document.querySelectorAll('.role-label').forEach(l => l.textContent = r === 'admin' ? 'ADMIN PORTAL' : 'RESIDENT ACCOUNT');
+    document.getElementById('top-avatar').textContent = r === 'admin' ? 'NA' : 'MB';
+    document.getElementById('login-user').placeholder = r === 'admin' ? 'admin@greenhub.brgy' : 'resident@greenhub.brgy';
+  }
+
+  function show(id) {
+    const view = document.getElementById(id);
+    if (!view) return;
+    document.querySelectorAll('.view').forEach(v => v.classList.toggle('active', v === view));
+    document.querySelectorAll('.nav a').forEach(a => a.classList.toggle('active', a.dataset.view === id));
+    body.classList.toggle('is-auth', id.startsWith('auth'));
+    if (view.dataset.title) titleEl.innerHTML = view.dataset.title;
+    window.scrollTo(0, 0);
+  }
+
+  document.addEventListener('click', e => {
+    const v = e.target.closest('[data-view]');
+    if (v) { e.preventDefault(); show(v.dataset.view); return; }
+
+    const o = e.target.closest('[data-open]');
+    if (o) { document.getElementById(o.dataset.open).showModal(); return; }
+
+    const r = e.target.closest('.role-btn');
+    if (r) { setRole(r.dataset.role); return; }
+
+    const chip = e.target.closest('.chip');
+    if (chip) {
+      const group = chip.closest('[data-filter-group]');
+      group.querySelectorAll('.chip').forEach(c => c.classList.remove('on'));
+      chip.classList.add('on');
+      if (chip.dataset.filter) applyFilters(group.dataset.filterGroup);
+    }
+  });
+
+  document.getElementById('login-form').addEventListener('submit', e => {
+    e.preventDefault();
+    show(body.dataset.role === 'admin' ? 'a-home' : 'r-home');
+  });
+  document.getElementById('register-form').addEventListener('submit', e => {
+    e.preventDefault(); setRole('resident'); show('r-home');
+  });
+  document.getElementById('register-admin').addEventListener('click', () => { setRole('admin'); show('a-home'); });
+
+  // Search + chip filters
+  function applyFilters(group) {
+    const cfg = {
+      catalog: { list: '#catalog-list .item', attr: 'cat',    search: '#catalog-search' },
+      users:   { list: '#user-list .user',    attr: 'status', search: '#user-search' }
+    }[group];
+    if (!cfg) return;
+    const active = document.querySelector(`[data-filter-group="${group}"] .chip.on`).dataset.filter;
+    const q = document.querySelector(cfg.search).value.toLowerCase();
+    document.querySelectorAll(cfg.list).forEach(el => {
+      const okChip = active === 'all' || el.dataset[cfg.attr] === active;
+      const okText = el.textContent.toLowerCase().includes(q);
+      el.hidden = !(okChip && okText);
+    });
+  }
+  document.getElementById('catalog-search').addEventListener('input', () => applyFilters('catalog'));
+  document.getElementById('user-search').addEventListener('input', () => applyFilters('users'));
+
+  setRole('resident');
+</script>
+</body>
+</html>
